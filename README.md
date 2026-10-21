@@ -14,6 +14,10 @@ Reusable agent instructions for turning readable sources into beginner lessons, 
 | [beginner-study-pack](skills/beginner-study-pack/SKILL.md) | Learning from a bounded set of sources | Examples before definitions, worked steps, printable lookup aids |
 | [grounded-quiz](skills/grounded-quiz/SKILL.md) | Checking understanding against those sources | Separate questions and answers, recompute solutions, cite only verified locations |
 
+## Edit a concept map offline
+
+Open [the concept-map tool](tools/concept-map/index.html) from a downloaded checkout. Edit or move cards, label relationships, undo, and save/reimport JSON. No data is uploaded; unsaved changes are lost on reload. See [the tool guide](docs/CONCEPT_MAP.md).
+
 ## Try it without installing anything
 
 Give an agent this request along with the referenced files:
@@ -21,6 +25,8 @@ Give an agent this request along with the referenced files:
 > Read `skills/grounded-quiz/SKILL.md`. Use `examples/synthetic-source.md` as the only source. Create four practice questions about ratios in English, with answers after the questions. Do not import or publish files.
 
 The skills are Markdown instructions, not executable integrations. Explicitly load a skill by path in an agent that can read local files. For automatic discovery, follow that agent's current installation instructions; this repository does not configure your agent or account.
+
+The fourth skill, [concept-map](skills/concept-map/SKILL.md), maps concepts with explicit relationship meanings and readable source locations.
 
 ## Make a compact prompt offline
 
@@ -41,6 +47,7 @@ Edit the [example brief](examples/brief.json) with your topic, source labels, in
 ```sh
 python3 scripts/check_repository.py
 python3 -m unittest discover -s tests -v
+node tools/concept-map/test.cjs
 ```
 
 The repository checker checks skill frontmatter and local Markdown links. Tests cover input validation, character-budget failure, CLI errors, and independent lesson/quiz prompts. Neither check proves factual correctness, privacy, or model behavior. See the [manual evaluation cases](docs/EVALUATION.md).

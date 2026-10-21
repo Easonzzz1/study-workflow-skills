@@ -1,6 +1,6 @@
 # Roadmap
 
-Initial candidate: three scoped skills, bilingual README, synthetic examples, offline prompt formatter and tests.
+Initial candidate: four scoped skills and an offline concept-map editor, plus, bilingual README, synthetic examples, offline prompt formatter and tests.
 
 Open work:
 

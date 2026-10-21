@@ -4,11 +4,17 @@
 
 这是刚整理出的首个开源版本候选，尚无外部使用量或效果统计。它提供操作说明和离线提示词工具，不自动连接 Notebook、上传课件或调用模型。
 
-## 三个工作流
+## 四个工作流
 
 - [资料导入核验](skills/source-import-check/SKILL.md)：使用现有笔记本；查重；逐份确认解析正文；准确报告失败和处理中项目。
 - [零基础学习材料](skills/beginner-study-pack/SKILL.md)：先解释例子，再给定义、英文术语与完整计算过程，最后制作适合纸质查找的索引。
 - [基于来源的测验](skills/grounded-quiz/SKILL.md)：限定范围，题目和答案分开，逐项解析，复算数值，不把自编题冒充真题。
+
+- [概念关系图](skills/concept-map/SKILL.md)：区分层级、因果与跨分支联系，保留来源依据。
+
+## 离线概念图工具
+
+下载后打开 [index.html](tools/concept-map/index.html)，即可编辑、拖动或用方向键移动卡片、撤销、保存及导入 JSON。不调用模型，不自动保存。默认内容是合成比例示例。详见 [使用说明](docs/CONCEPT_MAP.md)。
 
 ## 直接使用
 

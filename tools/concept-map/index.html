@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>概念关系图 · Concept Map</title>
+  <link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
+</head>
+<body>
+<header><span class="eyebrow">STUDY WORKFLOW / OFFLINE TOOL</span><h1>把知识连成一张图</h1>
+  <p>拖动卡片、标明关系、留下依据。Drag cards; label relationships; retain evidence.</p></header>
+<nav aria-label="图谱操作">
+  <button id="add">添加子节点 / Add child</button><button id="undo" disabled>撤销 / Undo</button>
+  <button id="export">保存 JSON / Save</button><label class="file">导入 JSON / Import<input id="import" type="file" accept=".json,application/json"></label>
+  <button id="print">打印 / Print</button>
+</nav>
+<main><section class="workspace" aria-label="概念图画布，可滚动"><div id="board"><svg id="edges" width="2400" height="1600" aria-hidden="true"></svg><div id="nodes"></div></div></section>
+<aside><h2>节点与依据</h2><p class="hint">选择卡片后编辑。卡片聚焦时用方向键移动。Select a card; arrow keys move it.</p>
+  <form id="editor"><label>标题 / Title<input id="title" maxlength="120" required></label>
+  <label>说明 / Note<textarea id="note" maxlength="2000" rows="5"></textarea></label>
+  <label>来源位置 / Source location<input id="source" maxlength="300"></label>
+  <label>父级节点 / Parent<select id="parent"></select></label>
+  <label>父级关系 / Relationship<input id="relation" maxlength="120"></label>
+  <p class="hint">修改父级会替换此节点的入边；已导入的其他出边保留。Parent editing replaces this node's incoming edges.</p>
+  <button type="submit" class="primary">应用编辑 / Apply</button><button id="remove" type="button">删除节点 / Delete</button></form>
+  <p id="status" role="status" aria-live="polite">合成示例已载入。Synthetic example loaded.</p>
+  <p class="hint">只在当前页面内编辑，不自动保存。离开前请保存 JSON。仅导入可信的本地文件；此工具不调用模型，不上传数据。</p>
+</aside></main>
+<footer>Independent community tool · MIT · Synthetic content · Use the browser's print preview to check pagination.</footer>
+</body></html>
