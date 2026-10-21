@@ -1,0 +1,7 @@
+{
+  "topic": "Ratios and percentages / 比例与百分数",
+  "scope": ["Ratios", "Percentages"],
+  "exclude": ["Probability inference"],
+  "sources": ["synthetic-source.md"],
+  "question_count": 4
+}
